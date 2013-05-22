@@ -1,0 +1,1 @@
+Gatekeeper sends false information to websites that attempt to collect information to sell to third parties.
