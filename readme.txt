@@ -1,1 +1,2 @@
-Gatekeeper sends false information to websites that attempt to collect information to sell to third parties.
+Gatekeeper is a Chrome browser extension.
+Gatekeeper provides false information to websites that attempt to collect personal information.
