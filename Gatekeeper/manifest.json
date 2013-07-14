@@ -7,8 +7,9 @@
 
 	"permissions": 
 	[
-		"storage",
 		"cookies",
+		"tabs",
+		"webRequest",
 		"*://*/*"
 	],
 	
