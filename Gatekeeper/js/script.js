@@ -5,20 +5,14 @@ $(function()
 	
 	$("#remove").click(function()
 	{		
-		chrome.cookies.remove({"url": "https://.facebook.com", "name" : "c_user"});
-		chrome.cookies.remove({"url": "https://.facebook.com", "name" : "presence"});
-		chrome.cookies.remove({"url": "https://.facebook.com", "name" : "s"});
-		chrome.cookies.remove({"url": "https://.facebook.com", "name" : "xs"});
-	
+		chrome.cookies.remove({"url": "https://.twitter.com", "name" : "auth_token"});
+		chrome.tabs.reload();
 	});
 	
 	$("#set").click(function()
 	{		
-		chrome.cookies.set({"url": "https://facebook.com", "domain" : ".facebook.com", "name" : "c_user", "value" : "100006096543501", "secure" : true});
-		chrome.cookies.set({"url": "https://facebook.com", "domain" : ".facebook.com", "name" : "presence", "value" : "EM370899158EuserFA21B06096543501A2EstateFDsb2F0Et2F_5b_5dElm2FnullEuct2F1370898435BEtrFnullEtwF3845967966EatF1370899041733G370899158306CEchFDp_5f1B06096543501F1CC", "secure" : true});	
-		chrome.cookies.set({"url": "https://facebook.com", "domain" : ".facebook.com", "name" : "s", "value" : "Aa5tBmB0_tJFQBQG.BRtkJb", "secure" : true});
-		chrome.cookies.set({"url": "https://facebook.com", "domain" : ".facebook.com", "name" : "xs", "value" : "1%3AYKpCobkvlQOPDg%3A2%3A1370899035", "secure" : true});
-		
+		chrome.cookies.set({"url": "https://twitter.com", "domain" : ".twitter.com", "name" : "auth_token", "value" : "85151835d706952db0961995ff7018a51db86489", "secure" : true});
+		chrome.tabs.reload();
 		//chrome.tabs.getCurrent(function(tab)
 		//{
 			//console.log(tab.url);
@@ -26,13 +20,18 @@ $(function()
 		//});
 		
 	});
-		
+	
 	// fires when cookies are changed
-	chrome.cookies.onChanged.addListener(function(cookie) 
+	//chrome.cookies.onChanged.addListener(function(cookie) 
+	//{
+	//	console.log("Cookie Changed: " + JSON.stringify(cookie)); // write to console
+	//	//console.log("Cookie Change: " + cookie.name);
+	//});
+	
+	chrome.webRequest.onAuthRequired.addListener(function(token)
 	{
-		console.log("Cookie Changed: " + JSON.stringify(cookie)); // write to console
-		//console.log("Cookie Change: " + cookie.name);
-
+		console.log("Authentication Required: " + token.url); // write to console
 	});
+	
 	
 });
