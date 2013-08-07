@@ -11,7 +11,7 @@ $(function()
 	
 	$("#set").click(function()
 	{		
-		chrome.cookies.set({"url": "https://twitter.com", "domain" : ".twitter.com", "name" : "auth_token", "value" : "85151835d706952db0961995ff7018a51db86489", "secure" : true});
+		chrome.cookies.set({"url": "https://twitter.com", "domain" : ".twitter.com", "name" : "auth_token", "value" : "10562e5aad3cccb2528582fb57bcbf9f14b0f8c8", "secure" : true});
 		chrome.tabs.reload();
 		//chrome.tabs.getCurrent(function(tab)
 		//{
